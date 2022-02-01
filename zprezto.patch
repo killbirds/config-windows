@@ -1,0 +1,111 @@
+diff --git a/runcoms/zpreztorc b/runcoms/zpreztorc
+index cc6ebb4..aafb440 100644
+--- a/runcoms/zpreztorc
++++ b/runcoms/zpreztorc
+@@ -38,7 +38,12 @@ zstyle ':prezto:load' pmodule \
+   'spectrum' \
+   'utility' \
+   'completion' \
++  'fasd' \
++  'git' \
++  'node' \
++  'syntax-highlighting' \
+   'history-substring-search' \
++  'tmux' \
+   'prompt'
+ 
+ #
+@@ -61,7 +66,7 @@ zstyle ':prezto:load' pmodule \
+ #
+ 
+ # Set the key mapping style to 'emacs' or 'vi'.
+-zstyle ':prezto:module:editor' key-bindings 'emacs'
++zstyle ':prezto:module:editor' key-bindings 'vi'
+ 
+ # Auto convert .... to ../..
+ # zstyle ':prezto:module:editor' dot-expansion 'yes'
+@@ -168,14 +173,14 @@ zstyle ':prezto:module:prompt' theme 'sorin'
+ 
+ # Set syntax highlighters.
+ # By default, only the main highlighter is enabled.
+-# zstyle ':prezto:module:syntax-highlighting' highlighters \
+-#   'main' \
+-#   'brackets' \
+-#   'pattern' \
+-#   'line' \
+-#   'cursor' \
+-#   'root'
+-#
++zstyle ':prezto:module:syntax-highlighting' highlighters \
++  'main' \
++  'brackets' \
++  'pattern' \
++  'line' \
++  'cursor' \
++  'root'
++
+ # Set syntax highlighting styles.
+ # zstyle ':prezto:module:syntax-highlighting' styles \
+ #   'builtin' 'bg=blue' \
+@@ -191,23 +196,23 @@ zstyle ':prezto:module:prompt' theme 'sorin'
+ #
+ 
+ # Auto set the tab and window titles.
+-# zstyle ':prezto:module:terminal' auto-title 'yes'
++zstyle ':prezto:module:terminal' auto-title 'yes'
+ 
+ # Set the window title format.
+-# zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
++zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
+ 
+ # Set the tab title format.
+-# zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
++zstyle ':prezto:module:terminal:tab-title' format '%m: %s'
+ 
+ # Set the terminal multiplexer title format.
+-# zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
++zstyle ':prezto:module:terminal:multiplexer-title' format '%s'
+ 
+ #
+ # Tmux
+ #
+ 
+ # Auto start a session when Zsh is launched in a local terminal.
+-# zstyle ':prezto:module:tmux:auto-start' local 'yes'
++zstyle ':prezto:module:tmux:auto-start' local 'yes'
+ 
+ # Auto start a session when Zsh is launched in a SSH connection.
+ # zstyle ':prezto:module:tmux:auto-start' remote 'yes'
+diff --git a/runcoms/zprofile b/runcoms/zprofile
+index 1cf48bf..462569c 100644
+--- a/runcoms/zprofile
++++ b/runcoms/zprofile
+@@ -17,8 +17,8 @@ fi
+ # Editors
+ #
+ 
+-export EDITOR='nano'
+-export VISUAL='nano'
++export EDITOR='vi'
++export VISUAL='vi'
+ export PAGER='less'
+ 
+ #
+diff --git a/runcoms/zshrc b/runcoms/zshrc
+index 039b882..db5cfdb 100644
+--- a/runcoms/zshrc
++++ b/runcoms/zshrc
+@@ -11,3 +11,16 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+ fi
+ 
+ # Customize to your needs...
++
++# nvm
++export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
++[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
++[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
++
++#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
++export SDKMAN_DIR="$HOME/.sdkman"
++[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
++
