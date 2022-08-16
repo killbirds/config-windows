@@ -53,22 +53,13 @@ Plug 'elmcast/elm-vim'
 "Plug 'posva/vim-vue'
 Plug 'jparise/vim-graphql'
 Plug 'rust-lang/rust.vim'
-
-" use yats.vim for typescript because  https://github.com/neoclide/coc.nvim/issues/135
-"Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
 
 Plug 'altercation/vim-colors-solarized'
 
 Plug 'jeetsukumaran/vim-buffergator'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" removed because use coc.nvim
-"Plug 'autozimu/LanguageClient-neovim', {
-"    \ 'branch': 'next',
-"    \ 'do': 'bash install.sh',
-"    \ }
 
 " removed because use coc.nvim
 "if has('nvim')
