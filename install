@@ -10,12 +10,17 @@ install=$cur/script/install.sh
 # settings
 (cd settings; $install ~)
 
+#nvim
+(mkdir -p ~/.config/nvim)
+(cd nvim; $install ~/.config/nvim)
+
+
 # sbt settings
 (cd sbt/0.13; $install ~/.sbt/0.13)
 (cd sbt/1.0; $install ~/.sbt/1.0)
 
 git config --global core.excludesfile ~/.gitignore_global
 
-vi +PlugInstall +qall
+vi +PackerInstall +qall
 
 

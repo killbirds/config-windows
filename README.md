@@ -2,17 +2,21 @@
 
 ## Preparation
 
-- powerline font
+- nerd font
 ```
-# PowerShell
-git clone https://github.com/powerline/fonts.git
-cd fonts
-install.ps1
+# https://www.nerdfonts.com
 ```
 
 - sudo apt install build-essential
 
-- install vim --with-lua
+- install neovim
+```
+sudo apt-get remove neovim -y
+
+sudo add-apt-repository ppa:neovim-ppa/stable 
+sudo apt-get update -y
+sudo apt-get install neovim -y
+```
 
 - install tmux
 ```
@@ -47,6 +51,11 @@ nvm install node
 apt install silversearcher-ag
 ```
 
+- rg
+```
+apt instrall ripgrep
+```
+
 - metals
 ```
 // https://scalameta.org/metals/
@@ -59,11 +68,5 @@ apt install silversearcher-ag
 ```
 ./install
 ```
-
-## coc.nvim
-- coc-metals
-- coc-tsserver
-- coc-json
-- coc-rust-analyzer
 
 
