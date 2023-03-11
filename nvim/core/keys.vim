@@ -35,6 +35,7 @@ nnoremap <silent> <down>  :res +5<cr>
 nnoremap <silent> <left>  :vertical res -10<cr>
 nnoremap <silent> <right> :vertical res +10<cr>
 
+
 " terminal
 tnoremap <Esc> <C-\><C-n>
 
