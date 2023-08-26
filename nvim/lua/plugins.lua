@@ -82,6 +82,8 @@ return require('packer').startup(function(use)
   }
 
   -- statusline
+  use { 'nvim-tree/nvim-web-devicons' }
+
   use {
     'nvim-lualine/lualine.nvim',
     event = "VimEnter",
