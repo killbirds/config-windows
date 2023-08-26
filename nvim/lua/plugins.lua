@@ -122,6 +122,24 @@ return require('packer').startup(function(use)
   -- Shows a git diff in the sign column.
   use { 'lewis6991/gitsigns.nvim', config = [[require('config.gitsigns')]] }
 
+  -- chatGPT
+  use({
+    "jackMort/ChatGPT.nvim",
+    config = function()
+      require("chatgpt").setup({
+        keymaps = {
+          submit = 'C-e'
+        }
+      })
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  })
+
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
